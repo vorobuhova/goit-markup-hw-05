@@ -10,6 +10,10 @@
     --button-bg-color: #f5f4fa;
     --card-set-gap: 30px;
     --social-links: #afb1b8;
+
+    --animation-duration: 250ms;
+    --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 body {
@@ -18,7 +22,6 @@ body {
     color: var(--title-text-color);
     background-color: var(--primary-white-color);
 }
-
 
 /* ---------------------Утиилиты--------------------- */
 
@@ -70,7 +73,6 @@ img {
     overflow: hidden;
 }
 
-
 /* --------------------- Section--------------------- */
 
 .section {
@@ -84,7 +86,6 @@ img {
     padding-left: 15px;
     padding-right: 15px;
 }
-
 
 /* --------------------- Header]--------------------- */
 
@@ -106,6 +107,10 @@ img {
     display: flex;
     align-items: center;
     margin-left: auto;
+}
+
+.nav-menu-item {
+    position: relative;
 }
 
 .nav-menu-item:not(:first-child) {
@@ -150,6 +155,21 @@ img {
     color: var(--accent-color);
 }
 
+.site-nav-text.current::after {
+    content: "";
+    display: block;
+
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--accent-color);
+}
+
 .nav-icons {
     margin-right: 10px;
     fill: currentColor;
@@ -171,7 +191,6 @@ img {
 .current {
     color: var(--accent-color);
 }
-
 
 /* ---------------------  Hero--------------------- */
 
@@ -201,7 +220,6 @@ img {
     text-transform: uppercase;
 }
 
-
 /* --------------------- button--------------------- */
 
 .pointer {
@@ -229,7 +247,6 @@ img {
 .hero-button:focus {
     background-color: var(--accent-color-hover);
 }
-
 
 /* --------------------- advantages---------------------*/
 
@@ -275,7 +292,6 @@ img {
     color: var(--primary-text-color);
 }
 
-
 /* --------------------- wedo--------------------- */
 
 .wedo {
@@ -294,6 +310,33 @@ img {
     padding-bottom: 50px;
 }
 
+.wedo-item {
+    position: relative;
+}
+
+.wedo-backdrop {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(47, 48, 58, 0.8);
+}
+
+
+.wedo-backdrop-text {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+
+    color: var(--primary-white-color);
+
+}
 
 /* team */
 
@@ -371,7 +414,6 @@ img {
     fill: currentColor;
 }
 
-
 /* --------------------- clients--------------------- */
 
 .clients-title {
@@ -407,7 +449,6 @@ img {
     height: 60px;
     fill: currentColor;
 }
-
 
 /* ---------------------footer--------------------- */
 
@@ -490,22 +531,21 @@ img {
 .footer-socials-link {
     display: block;
     border-radius: 50%;
-	width: 44px;
-	height: 44px;
+    width: 44px;
+    height: 44px;
 
     display: flex;
-	justify-content: center;
+    justify-content: center;
     align-items: center;
 
     background-color: rgba(255, 255, 255, 0.1);
-	fill: var(--primary-white-color);
+    fill: var(--primary-white-color);
 }
 
 .footer-socials-link:hover,
 .footer-socials-link:focus {
-	background-color: var(--accent-color);
+    background-color: var(--accent-color);
 }
-
 
 /* --------------------- Портфолищ--------------------- */
 
@@ -542,8 +582,7 @@ img {
     box-shadow: 0px 3px 1px rgb(0 0 0 / 10%), 0px 1px 2px rgb(0 0 0 / 8%), 0px 2px 2px rgb(0 0 0 / 12%);
 }
 
-
-/* ---------------------оформление списка работ--------------------- */
+/* --------------------- список работ--------------------- */
 
 .works-item-bottom {
     padding: 20px 24px;
@@ -552,7 +591,7 @@ img {
     border-left: 1px solid #eeeeee;
 }
 
-.portfolio-title {
+.works-title {
     font-weight: 700;
     font-size: 18px;
     line-height: 2;
@@ -562,21 +601,62 @@ img {
     color: var(--title-text-color);
 }
 
-.portfolio-text {
+.works-text {
     font-size: 16px;
     line-height: 1.87;
     color: var(--primary-text-color);
 }
 
-.portfolio-examples {
+.works-items {
     display: flex;
     flex-wrap: wrap;
     margin-right: calc(-1 * var(--card-set-gap));
     margin-bottom: calc(-1 * var(--card-set-gap));
 }
 
-.portfolio-link {
+.works-item {
     /* flex-basis: calc(100% / 3 - var(--card-set-gap)); */
     margin-right: var(--card-set-gap);
     margin-bottom: var(--card-set-gap);
+}
+
+.works-backdrop {
+    position: relative;
+    overflow: hidden;
+}
+
+.works-imgage {
+    display: block;
+}
+.works-backdrop {
+    position: relative;
+    overflow: hidden;
+}
+
+.works-img {
+    display: block;
+}
+
+.works-backdrop-bg {
+    position: absolute;
+
+    transform: translateY(0);
+    transition: transform var(--animation-duration) var(--timing-function);
+
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(33, 150, 243, 0.9);
+}
+
+.works-backdrop-text {
+    width: 322px;
+    font-size: 18px;
+    line-height: 1.56;
+    color: var(--primary-white-color);
 }

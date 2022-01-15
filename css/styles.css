@@ -226,8 +226,6 @@ img {
     text-transform: uppercase;
 }
 
-/* --------------------- button--------------------- */
-
 .pointer {
     cursor: pointer;
 }
@@ -254,6 +252,61 @@ img {
 .hero-button:hover,
 .hero-button:focus {
     background-color: var(--accent-color-hover);
+}
+
+.hero-backdrop {
+	position: fixed;
+
+	visibility: visible;
+	opacity: 1;
+	transition: opacity var(--animation-duration) var(--timing-function),
+		visibility var(--animation-duration) var(--timing-function);
+
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.hero-backdrop.is-hidden {
+	visibility: hidden;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.hero-backdrop.is-hidden .hero-modal {
+	transform: scale(0.1) translate(-50%, -50%);
+}
+
+.hero-modal {
+	position: absolute;
+
+	transform: translate(-50%, -50%) scale(1);
+	transform-origin: top left;
+	transition: transform var(--animation-duration) var(--timing-function);
+
+	width: 528px;
+	height: 581px;
+	top: 50%;
+	left: 50%;
+
+	background-color: var(--primary-white-color);
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+}
+
+.hero-modal-close {
+	width: 30px;
+	height: 30px;
+	margin: 8px 8px 0 auto;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background-color: var(--primary-white-color);
+	border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* --------------------- advantages---------------------*/

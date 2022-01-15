@@ -133,6 +133,8 @@ img {
 
 .logo-accent {
     color: var(--title-text-color);
+
+    transition: color var(--animation-duration) var(--timing-function);
 }
 
 .logo-accent:hover,
@@ -148,6 +150,8 @@ img {
     letter-spacing: 0.02em;
     color: var(--title-text-color);
     display: block;
+
+    transition: color var(--animation-duration) var(--timing-function);
 }
 
 .site-nav-text:hover,
@@ -184,6 +188,8 @@ img {
     color: var(--primary-text-color);
     display: flex;
     align-items: center;
+
+    transition: color var(--animation-duration) var(--timing-function);
 }
 
 .site-contact:hover,
@@ -241,6 +247,8 @@ img {
     border: none;
     border-radius: 4px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+    transition: background-color var(--animation-duration) var(--timing-function);
 }
 
 .hero-button:hover,
@@ -402,6 +410,11 @@ img {
     justify-content: center;
     background-color: transparent;
     color: var(--social-links);
+
+    transition: background-color var(--animation-duration) var(--timing-function), 
+    color var(--animation-duration) var(--timing-function);
+
+
 }
 
 .team-social-link:hover,
@@ -436,6 +449,9 @@ img {
     border: 1px solid var(--social-links);
     border-radius: 4px;
     color: var(--social-links);
+
+    transition: color var(--animation-duration) var(--timing-function),
+	border-color var(--animation-duration) var(--timing-function);
 }
 
 .clients-link:hover,
@@ -464,9 +480,12 @@ img {
 
 .logo-accent-footer {
     color: var(--primary-white-color);
+
+    transition: color var(--animation-duration) var(--timing-function);
 }
 
-.logo-accent-footer:hover {
+.footer-logo:hover .logo-accent-footer,
+.footer-logo:focus .logo-accent-footer {
     color: var(--accent-color);
 }
 
@@ -482,6 +501,8 @@ img {
     line-height: 1.71;
     font-style: normal;
     color: var(--primary-white-color);
+
+    transition: color var(--animation-duration) var(--timing-function);
 }
 
 .footer-adress:not(:last-child) {
@@ -493,12 +514,12 @@ img {
     line-height: 1.71;
     font-style: normal;
     color: rgba(255, 255, 255, 0.6);
+
+    transition: color var(--animation-duration) var(--timing-function);
 }
 
-.footer-map:hover,
-.footer-map:focus,
-.footer-contact:hover,
-.footer-contact:focus {
+.footer-map:hover, .footer-map:focus,
+.footer-contact:hover, .footer-contact:focus {
     color: var(--accent-color);
 }
 
@@ -540,6 +561,9 @@ img {
 
     background-color: rgba(255, 255, 255, 0.1);
     fill: var(--primary-white-color);
+
+    transition: background-color var(--animation-duration) var(--timing-function);
+
 }
 
 .footer-socials-link:hover,
@@ -547,7 +571,7 @@ img {
     background-color: var(--accent-color);
 }
 
-/* --------------------- portfolio--------------------- */
+/* --------------------- Our types of work--------------------- */
 
 .portfolio-button {
     display: flex;
@@ -568,12 +592,17 @@ img {
     line-height: 1.62;
     border: none;
     border-radius: 4px;
+
+    transition: color var(--animation-duration) var(--timing-function), background-color var(--animation-duration) var(--timing-function), box-shadow var(--animation-duration) var(--timing-function);
+
 }
 
 .button-works:hover,
 .button-works:focus {
     color: var(--primary-white-color);
     background-color: var(--accent-color-hover);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+
 }
 
 .button-current {
@@ -582,7 +611,7 @@ img {
     box-shadow: 0px 3px 1px rgb(0 0 0 / 10%), 0px 1px 2px rgb(0 0 0 / 8%), 0px 2px 2px rgb(0 0 0 / 12%);
 }
 
-/* --------------------- works--------------------- */
+/* --------------------- Examples of our work--------------------- */
 
 .works-item-bottom {
     padding: 20px 24px;
